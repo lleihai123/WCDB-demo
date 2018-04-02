@@ -7,9 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "TableManager.h"
-#import "User.h"
-#import "YGUser.h"
+
 @interface ViewController ()
 
 {
@@ -41,53 +39,19 @@
 
 - (void)deleteTable:(NSString *)tableName
 {
-    [[TableManager defalutManager] deleteTable:tableName];
+    
 }
 
 
 - (void)queryTable
 {
 
-    NSLog(@"------------YGUSER--------------");
-    [YGUser queryAllData:^(NSArray *selectResults) {
-        for (int i = 0; i < selectResults.count; i++) {
-            NSLog(@"name == %@",((YGUser *)selectResults[i]).name);
-            NSLog(@"hostID == %@",((YGUser *)selectResults[i]).hostID);
-        }
-    }];
-    NSLog(@"------------User--------------");
-    [User queryAllData:^(NSArray *msgArr) {
-        for (int i = 0; i < msgArr.count; i++) {
-            NSLog(@"hostID == %@",((User *)msgArr[i]).hostID);
-            NSLog(@"userid == %ld",(long)((User *)msgArr[i]).userid);
-            NSLog(@"localID == %ld",(long)((User *)msgArr[i]).localID);
-            NSLog(@"name == %@",((User *)msgArr[i]).name);
-            NSLog(@"content == %@",((User *)msgArr[i]).content);
-            NSLog(@"tmpname == %@",((User *)msgArr[i]).tmpname);
-        }
-    }];
-
+    
 }
 
 
 -(void)addData{
-    CFAbsoluteTime start = CFAbsoluteTimeGetCurrent();
-    for (NSInteger i = 1; i <= 3; i++) {
-        User    *user   = [[User alloc] init];
-        user.userid = i;
-        user.localID = i;
-        user.content    = [NSString stringWithFormat:@"%f",CFAbsoluteTimeGetCurrent()];
-        user.name       = [NSString stringWithFormat:@"%d",2222];
-        user.tmpname = [user.name stringByAppendingString:@"ddd"];
-        user.hostID = [NSString stringWithFormat:@"sss_%ld",(long)i];
-        [user saveSelf];
-        YGUser    *yguser   = [[YGUser alloc] init];
-        yguser.name       = [NSString stringWithFormat:@"%d",2222];
-        yguser.hostID = [NSString stringWithFormat:@"yg_sss_%ld",(long)i];
-        [yguser saveSelf];
-
-    }
-    NSLog(@"HY: Function Run Time: %f", CFAbsoluteTimeGetCurrent() - start);
+    
 }
 
 #pragma mark ====================
@@ -107,8 +71,7 @@
 {
     switch (sender.tag) {
         case 10:
-            [User truncateTable];
-            [YGUser truncateTable];
+           
             break;
         case 11:
             break;
@@ -123,6 +86,6 @@
     }
 }
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [YGUser new];
+   
 }
 @end
