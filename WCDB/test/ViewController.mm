@@ -7,11 +7,12 @@
 //
 
 #import "ViewController.h"
-
+#import "YGHotSession.h"
+#import "YGColdSession.h"
+#import "NSObject+YG.h"
+#import "YGHotSession+BLogic.h"
 @interface ViewController ()
-
 {
-    UIButton    *createBtn;
     UIButton    *removeBtn;
     UIButton    *queryBtn;
     UIButton    *addDataBtn;
@@ -25,33 +26,47 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor   = [UIColor grayColor];
-    
-    createBtn   = [self normalBtn:CGPointMake(100, 100) title:@"删除表" tag:10];
     removeBtn   = [self normalBtn:CGPointMake(100, 200) title:@"清空数据" tag:11];
     queryBtn    = [self normalBtn:CGPointMake(100, 300) title:@"查询数据" tag:12];
     addDataBtn  = [self normalBtn:CGPointMake(100, 400) title:@"插入数据" tag:13];
-
-    [self.view addSubview:createBtn];
     [self.view addSubview:removeBtn];
     [self.view addSubview:queryBtn];
     [self.view addSubview:addDataBtn];
 }
 
-- (void)deleteTable:(NSString *)tableName
-{
-    
+- (void)deleteTable{
+    [YGHotSession truncateTable];
+    [[YGHotSession sharedManager] resetYGCache];
+    [YGColdSession truncateTable];
+    [[YGColdSession sharedManager] resetYGCache];
+    NSLog(@"清空数据 操作完成");
 }
 
 
-- (void)queryTable
-{
-
-    
+- (void)queryTable{
+    NSArray*array = [YGHotSession allSession];
+    for (YGHotSession*hotSession in array) {
+        NSLog(@"(hot:%@ **** cold:%@)",hotSession,hotSession.coldSession);
+    }
+    NSLog(@"查询数据 操作完成");
 }
 
 
 -(void)addData{
-    
+    for (NSInteger i = 1; i <= 5; i++) {
+        [YGHotSession return:^(YGHotSession* value) {
+            [value updateByDict:@{@"sessionId":@(i),
+                                  @"lang":[NSString stringWithFormat:@"lang_%ld",(long)i],
+                                  @"package":[NSString stringWithFormat:@"package_%ld",(long)i],
+                                  }];
+            [value.coldSession updateByDict:@{@"objDesc":[NSString stringWithFormat:@"objDesc_%@",value.lang],
+                                              @"currentLevel":@(i%5)
+                                              }];
+            [value saveSelf];
+            [value.coldSession saveSelf];
+        }];
+    }
+    NSLog(@"插入数据 操作完成");
 }
 
 #pragma mark ====================
@@ -70,10 +85,8 @@
 - (void)btnClick:(UIButton *)sender
 {
     switch (sender.tag) {
-        case 10:
-           
-            break;
         case 11:
+            [self deleteTable];
             break;
         case 12:
             [self queryTable];
@@ -84,8 +97,5 @@
         default:
             break;
     }
-}
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-   
 }
 @end

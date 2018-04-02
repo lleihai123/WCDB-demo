@@ -123,6 +123,10 @@
 		3871AD122071DA7D0059AD15 /* DBMangeShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 3871AD112071DA7D0059AD15 /* DBMangeShare.m */; };
 		3871AD132071DCED0059AD15 /* WCDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3871ABB42071D68E0059AD15 /* WCDB.framework */; };
 		3871AD142071DCED0059AD15 /* WCDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3871ABB42071D68E0059AD15 /* WCDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3871AD1D2071DE150059AD15 /* YGHotSession+BLogic.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3871AD172071DE140059AD15 /* YGHotSession+BLogic.mm */; };
+		3871AD1E2071DE150059AD15 /* YGColdSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 3871AD182071DE150059AD15 /* YGColdSession.m */; };
+		3871AD1F2071DE150059AD15 /* YGColdSession+BLogic.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3871AD1A2071DE150059AD15 /* YGColdSession+BLogic.mm */; };
+		3871AD202071DE150059AD15 /* YGHotSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 3871AD1B2071DE150059AD15 /* YGHotSession.m */; };
 		4F082E5A200DD75E00A5FBCC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD9B1641FB2B5D3001E3CC9 /* main.m */; };
 		4FD9B1571FB2B5D3001E3CC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD9B1561FB2B5D3001E3CC9 /* AppDelegate.m */; };
 		4FD9B15A1FB2B5D3001E3CC9 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4FD9B1591FB2B5D3001E3CC9 /* ViewController.mm */; };
@@ -383,6 +387,14 @@
 		3871AD042071D9F60059AD15 /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
 		3871AD102071DA7D0059AD15 /* DBMangeShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMangeShare.h; sourceTree = "<group>"; };
 		3871AD112071DA7D0059AD15 /* DBMangeShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMangeShare.m; sourceTree = "<group>"; };
+		3871AD152071DE140059AD15 /* YGColdSession+BLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "YGColdSession+BLogic.h"; path = "db_model/YGColdSession+BLogic.h"; sourceTree = "<group>"; };
+		3871AD162071DE140059AD15 /* YGColdSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGColdSession.h; path = db_model/YGColdSession.h; sourceTree = "<group>"; };
+		3871AD172071DE140059AD15 /* YGHotSession+BLogic.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "YGHotSession+BLogic.mm"; path = "db_model/YGHotSession+BLogic.mm"; sourceTree = "<group>"; };
+		3871AD182071DE150059AD15 /* YGColdSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YGColdSession.m; path = db_model/YGColdSession.m; sourceTree = "<group>"; };
+		3871AD192071DE150059AD15 /* YGHotSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGHotSession.h; path = db_model/YGHotSession.h; sourceTree = "<group>"; };
+		3871AD1A2071DE150059AD15 /* YGColdSession+BLogic.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "YGColdSession+BLogic.mm"; path = "db_model/YGColdSession+BLogic.mm"; sourceTree = "<group>"; };
+		3871AD1B2071DE150059AD15 /* YGHotSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YGHotSession.m; path = db_model/YGHotSession.m; sourceTree = "<group>"; };
+		3871AD1C2071DE150059AD15 /* YGHotSession+BLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "YGHotSession+BLogic.h"; path = "db_model/YGHotSession+BLogic.h"; sourceTree = "<group>"; };
 		4FD9B1521FB2B5D3001E3CC9 /* WCDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WCDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FD9B1551FB2B5D3001E3CC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4FD9B1561FB2B5D3001E3CC9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -708,6 +720,14 @@
 		4F082E58200DD3B400A5FBCC /* test */ = {
 			isa = PBXGroup;
 			children = (
+				3871AD162071DE140059AD15 /* YGColdSession.h */,
+				3871AD182071DE150059AD15 /* YGColdSession.m */,
+				3871AD152071DE140059AD15 /* YGColdSession+BLogic.h */,
+				3871AD1A2071DE150059AD15 /* YGColdSession+BLogic.mm */,
+				3871AD192071DE150059AD15 /* YGHotSession.h */,
+				3871AD1B2071DE150059AD15 /* YGHotSession.m */,
+				3871AD1C2071DE150059AD15 /* YGHotSession+BLogic.h */,
+				3871AD172071DE140059AD15 /* YGHotSession+BLogic.mm */,
 				4FD9B1581FB2B5D3001E3CC9 /* ViewController.h */,
 				4FD9B1591FB2B5D3001E3CC9 /* ViewController.mm */,
 			);
@@ -828,12 +848,14 @@
 				3871ACA32071D93B0059AD15 /* NSString+RACKeyPathUtilities.m in Sources */,
 				3871AC932071D93B0059AD15 /* NSArray+RACSequenceAdditions.m in Sources */,
 				3871ABCA2071D8C90059AD15 /* YYDiskCache.m in Sources */,
+				3871AD1F2071DE150059AD15 /* YGColdSession+BLogic.mm in Sources */,
 				3871AD122071DA7D0059AD15 /* DBMangeShare.m in Sources */,
 				3871AD0F2071D9F60059AD15 /* NSString+MJExtension.m in Sources */,
 				3871AD0A2071D9F60059AD15 /* MJPropertyType.m in Sources */,
 				3871AC962071D93B0059AD15 /* NSEnumerator+RACSequenceAdditions.m in Sources */,
 				3871ACA52071D93B0059AD15 /* NSString+RACSupport.m in Sources */,
 				3871ACB72071D93B0059AD15 /* RACErrorSignal.m in Sources */,
+				3871AD1E2071DE150059AD15 /* YGColdSession.m in Sources */,
 				3871ACA82071D93B0059AD15 /* RACArraySequence.m in Sources */,
 				3871ABCC2071D8CA0059AD15 /* YYMemoryCache.m in Sources */,
 				3871ABAF2071D6780059AD15 /* DBManager.mm in Sources */,
@@ -896,12 +918,14 @@
 				3871ACE32071D93B0059AD15 /* UIImagePickerController+RACSignalSupport.m in Sources */,
 				3871ACEC2071D93B0059AD15 /* UITextView+RACSignalSupport.m in Sources */,
 				3871ACA42071D93B0059AD15 /* NSString+RACSequenceAdditions.m in Sources */,
+				3871AD1D2071DE150059AD15 /* YGHotSession+BLogic.mm in Sources */,
 				3871ACD72071D93B0059AD15 /* RACUnarySequence.m in Sources */,
 				3871ACE72071D93B0059AD15 /* UIStepper+RACSignalSupport.m in Sources */,
 				3871ACE52071D93B0059AD15 /* UISegmentedControl+RACSignalSupport.m in Sources */,
 				3871ACAB2071D93B0059AD15 /* RACChannel.m in Sources */,
 				3871ACB12071D93B0059AD15 /* RACDynamicPropertySuperclass.m in Sources */,
 				3871AD0E2071D9F60059AD15 /* NSObject+MJProperty.m in Sources */,
+				3871AD202071DE150059AD15 /* YGHotSession.m in Sources */,
 				3871ACCA2071D93B0059AD15 /* RACSignal.m in Sources */,
 				3871ACB02071D93B0059AD15 /* RACDisposable.m in Sources */,
 				3871ACBB2071D93B0059AD15 /* RACIndexSetSequence.m in Sources */,
